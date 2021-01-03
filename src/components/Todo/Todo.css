@@ -7,7 +7,7 @@
 .todo-list {
   list-style: none;
   padding: 5px 10px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .todo-list__item {
@@ -19,9 +19,15 @@
   justify-content: space-between;
 }
 
+.li-block {
+  display: flex;
+  align-items: center;
+}
+
 .li-btn {
   height: 30px;
   width: 30px;
+  margin-right: 10px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -32,7 +38,9 @@
   cursor: pointer;
 }
 
+
 .dell-img {
   width: 30px;
   cursor: pointer;
+  margin-right: 10px;
 }

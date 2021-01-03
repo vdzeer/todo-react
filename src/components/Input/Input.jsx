@@ -16,7 +16,7 @@ function Input({setTodos}) {
 
     setTodos((todos) => [...todos, newTodo]);
   }
-
+  
   return (
     <div className="inputField">
       <input className="input" placeholder="Input todos..."/>

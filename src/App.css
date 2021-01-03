@@ -3,6 +3,10 @@
   font-family: sans-serif;
 }
 
+body {
+  background: url(./bg.jpg) top center / cover;
+}
+
 .App {
   width: 600px;
   height: 650px;
@@ -20,9 +24,9 @@
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+  background-color: #fff;
 }
 
 .isComplete {
   text-decoration: line-through;
-  color: red;
 }

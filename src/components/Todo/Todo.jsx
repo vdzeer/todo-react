@@ -18,8 +18,11 @@ function Todo({todos, setTodos}) {
 
   const deleteTodo = (ind) => {
     setTodos([...todos.slice(0, ind), ...todos.slice(ind + 1)]);
+    // localStorage.setItem('todos', JSON.stringify(todos));
   }
 
+
+  localStorage.setItem('todos', JSON.stringify(todos));
   return (
     <div className="todo">
       <ul className="todo-list">
@@ -27,24 +30,26 @@ function Todo({todos, setTodos}) {
           todos.map((el, index) => {
             return (
               <li className="todo-list__item" key={index}>
-                {el.isComplete ?
-                <img 
-                  className="dell-img" 
-                  src={imgDone}
-                  alt="delete"
-                  onClick={() => changeIsComplete(index)}
-                />
-                :
-                <button 
-                  className="li-btn" 
-                  onClick={() => changeIsComplete(index)}>
-                </button>
-                }
+                <div className="li-block">
+                  {el.isComplete ?
+                  <img 
+                    className="dell-img" 
+                    src={imgDone}
+                    alt="delete"
+                    onClick={() => changeIsComplete(index)}
+                  />
+                  :
+                  <button 
+                    className="li-btn" 
+                    onClick={() => changeIsComplete(index)}>
+                  </button>
+                  }
 
-                <span className={
-                el.isComplete ? 'isComplete' : ''}>
-                  {el.title} 
-                </span>
+                  <span className={
+                  el.isComplete ? 'isComplete' : ''}>
+                    {el.title} 
+                  </span>
+                </div>
 
                 <img 
                   className="dell-img" 

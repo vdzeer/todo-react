@@ -5,16 +5,21 @@ import Todo from './components/Todo/Todo';
 
 
 function App() {
-  const [todos, setTodos] = React.useState([
-    {
-      title: "Learn React js",
-      isComplete: true
-    },
-    {
-      title: "Finish todo-list",
-      isComplete: false
-    }
-  ]);
+  if (!localStorage.getItem('todos')) {
+    localStorage.setItem('todos', JSON.stringify([
+      {
+        title: "Learn React js",
+        isComplete: true
+      },
+      {
+        title: "Finish todo-list",
+        isComplete: false
+      }
+    ]));
+  }
+  console.log(localStorage.getItem('todos'));
+  const [todos, setTodos] = 
+    React.useState(JSON.parse(localStorage.getItem('todos')));
 
   return (
     <div className="App">
