@@ -1,5 +1,8 @@
 import React from 'react';
 import './Todo.css';
+import imgDone from './done.png';
+import imgTrash from './trash.png';
+
 
 function Todo({todos, setTodos}) {
   const changeIsComplete = (ind) => {
@@ -24,21 +27,31 @@ function Todo({todos, setTodos}) {
           todos.map((el, index) => {
             return (
               <li className="todo-list__item" key={index}>
+                {el.isComplete ?
+                <img 
+                  className="dell-img" 
+                  src={imgDone}
+                  alt="delete"
+                  onClick={() => changeIsComplete(index)}
+                />
+                :
                 <button 
                   className="li-btn" 
                   onClick={() => changeIsComplete(index)}>
                 </button>
+                }
 
                 <span className={
-                el['isComplete'] ? 'isComplete' : ''}>
-                  {el['title']} 
+                el.isComplete ? 'isComplete' : ''}>
+                  {el.title} 
                 </span>
 
-                <button 
-                  className="li-btn dell-btn" 
-                  onClick={() => deleteTodo(index)}>
-                  DELL
-                </button>
+                <img 
+                  className="dell-img" 
+                  src={imgTrash}
+                  alt="delete"
+                  onClick={() => deleteTodo(index)}
+                />
               </li>
             )
           })
