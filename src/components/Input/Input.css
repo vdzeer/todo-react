@@ -1,0 +1,25 @@
+.inputField {
+  width: 600px;
+  height: 45px;
+  padding-top: 5px;
+  /* padding-bottom: 25px; */
+  border-bottom: 1px solid #000;
+}
+
+.input {
+  width: 560px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 0px 7px;
+}
+
+.input-btn {
+  width: 20px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  outline: none;
+}

@@ -1,0 +1,38 @@
+.todo {
+  overflow-y: scroll;
+  height: 600px;
+  width: 600px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+.todo-list__item {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.li-btn {
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  outline: none;
+  cursor: pointer;
+}
+
+.dell-btn {
+  width: 50px;
+}
