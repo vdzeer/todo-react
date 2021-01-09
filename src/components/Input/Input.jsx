@@ -2,7 +2,7 @@ import React from 'react';
 import './Input.css';
 
 function Input({setTodos}) {
-  const addTodo = (e) => {
+  const addTodo = () => {
     const inputTitle = document.querySelector('.input').value;
 
     if (inputTitle === '') return alert('Input todo!');

@@ -1,0 +1,11 @@
+.todo {
+  overflow-y: scroll;
+  height: 600px;
+  width: 600px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 5px 10px;
+  font-size: 20px;
+}

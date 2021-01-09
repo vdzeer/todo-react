@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Input from './components/Input/Input';
-import Todo from './components/Todo/Todo';
+import Todo from './containers/Todo/Todo';
 
 
 function App() {
@@ -13,11 +13,11 @@ function App() {
       },
       {
         title: "Finish todo-list",
-        isComplete: false
+        isComplete: true
       }
     ]));
   }
-  console.log(localStorage.getItem('todos'));
+
   const [todos, setTodos] = 
     React.useState(JSON.parse(localStorage.getItem('todos')));
 

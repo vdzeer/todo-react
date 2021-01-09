@@ -4,66 +4,39 @@ import imgDone from './done.png';
 import imgTrash from './trash.png';
 
 
-function Todo({todos, setTodos}) {
-  const changeIsComplete = (ind) => {
-    setTodos([
-      ...todos.slice(0, ind), 
-      {
-        title: todos[ind].title,
-        isComplete: !todos[ind].isComplete
-      },
-      ...todos.slice(ind + 1)
-    ]);
-  }
-
-  const deleteTodo = (ind) => {
-    setTodos([...todos.slice(0, ind), ...todos.slice(ind + 1)]);
-    // localStorage.setItem('todos', JSON.stringify(todos));
-  }
-
-
-  localStorage.setItem('todos', JSON.stringify(todos));
+function Todo({el, index, changeIsComplete, deleteTodo}) {
   return (
-    <div className="todo">
-      <ul className="todo-list">
+    <li className="todo-list__item">
+      <div className="li-block">
         {
-          todos.map((el, index) => {
-            return (
-              <li className="todo-list__item" key={index}>
-                <div className="li-block">
-                  {el.isComplete ?
-                  <img 
-                    className="dell-img" 
-                    src={imgDone}
-                    alt="delete"
-                    onClick={() => changeIsComplete(index)}
-                  />
-                  :
-                  <button 
-                    className="li-btn" 
-                    onClick={() => changeIsComplete(index)}>
-                  </button>
-                  }
-
-                  <span className={
-                  el.isComplete ? 'isComplete' : ''}>
-                    {el.title} 
-                  </span>
-                </div>
-
-                <img 
-                  className="dell-img" 
-                  src={imgTrash}
-                  alt="delete"
-                  onClick={() => deleteTodo(index)}
-                />
-              </li>
-            )
-          })
+          el.isComplete ?
+          <img 
+            className="dell-img" 
+            src={imgDone}
+            alt="delete"
+            onClick={() => changeIsComplete(index)}
+          />
+          :
+          <button 
+            className="li-btn" 
+            onClick={() => changeIsComplete(index)}>
+          </button>
         }
-      </ul>
-    </div>
-  );
+
+        <span className={
+          el.isComplete ? 'isComplete' : ''}>
+          {el.title}
+        </span>
+      </div>
+
+      <img 
+        className="dell-img" 
+        src={imgTrash}
+        alt="delete"
+        onClick={() => deleteTodo(index)}
+      />
+    </li>
+  )
 }
 
 export default Todo;
